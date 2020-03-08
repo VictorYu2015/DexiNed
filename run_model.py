@@ -69,7 +69,7 @@ def config_model():
     # test config
     parser.add_argument('--test_snapshot', default=149736, type=int) #  old: 149736
     parser.add_argument('--testing_threshold', default=0.0, type=float)
-    parser.add_argument('--base_dir_results',default=''/storage/results/edges'',type=str) # default: '/opt/results/edges'
+    parser.add_argument('--base_dir_results',default='/storage/results/edges',type=str) # default: '/opt/results/edges'
     args = parser.parse_args()
 
     return args
