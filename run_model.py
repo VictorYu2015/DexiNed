@@ -10,6 +10,8 @@ __homepage__="www.cvc.uab.cat/people/xsoria"
 __credits__=['DexiNed']
 __copyright__   = "MIT License [see LICENSE for details]"#"Copyright 2019, CIMI"
 
+!pip install opencv-python
+
 import sys
 import argparse
 import tensorflow as tf
