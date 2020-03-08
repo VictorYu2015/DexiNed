@@ -276,8 +276,8 @@ def augment_data(args):
     # **************** training data ************************#
     if data_for=='train' and not args.use_nir:
         base_dataset_dir = args.dataset_dir.lower() + args.train_dataset + '/edges'
-        GT_dir = os.path.join(base_dataset_dir, 'edge_maps/train/rgbr')
-        X_dir = os.path.join(base_dataset_dir, 'imgs/train/rgbr')
+        GT_dir = os.path.join(base_dataset_dir, 'edge_maps/train/rgbr/aug')
+        X_dir = os.path.join(base_dataset_dir, 'imgs/train/rgbr/aug')
         # this implementation is just for BIPED dataset
         gt_list = os.listdir(os.path.join(GT_dir,'real'))  #
         gt_list.sort()
@@ -667,8 +667,6 @@ def augment_data(args):
                     os.makedirs(save_dir_x)
                 if not os.path.exists(save_dir_gt):
                     os.makedirs(save_dir_gt)
-                    
-                print("creating the dirs: ", save_dir_x, save_dir_gt)
 
                 print("Working on the dir: ", os.path.join(X_dir, i), os.path.join(GT_dir, i))
                 for j in range(n):
@@ -990,8 +988,6 @@ def augment_data(args):
 
                     if not os.path.exists(save_dir_x):
                         os.makedirs(save_dir_x)
-                        
-                    print("creating the dir: ", save_dir_x)
 
                     print("Working on the dir: ", os.path.join(X_dir, i), i)
                     for j in range(n):
@@ -1114,11 +1110,8 @@ def get_batch(arg,file_list, batch=None, use_batch=True):
         images=[]
         edgemaps=[]
         for idx, b in enumerate(batch):
-            
-            print("file_list[b][0], file_list[b][1],", file_list[b][0],file_list[b][1])
             x = cv.imread(file_list[b][0]) #  Image.open(file_list[b][0])
             y = cv.imread(file_list[b][1]) #  Image.open(file_list[b][1])
-            print("arg.image_width, arg.image_height,", arg.image_width,arg.image_height)
             if arg.model_state=='test':
                 pass
             else:
