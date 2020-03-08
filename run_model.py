@@ -32,7 +32,8 @@ def config_model():
     parser.add_argument('--use_nir', default=False, type=bool)
     parser.add_argument('--use_dataset', default=False, type=bool) # test: dataset TRUE single image FALSE
     # model config
-    parser.add_argument('--model_state', default='test', choices=['train','test','None']) # always in None
+    # parser.add_argument('--model_state', default='test', choices=['train','test','None']) # always in None
+    parser.add_argument('--model_state', default='train', choices=['train','test','None'])
     parser.add_argument('--model_name', default='DXN',choices=['DXN','XCP','None'])
     parser.add_argument('--use_v1', default=False,type=bool)
     parser.add_argument('--model_purpose', default='edges',choices=['edges','restoration','None'])
