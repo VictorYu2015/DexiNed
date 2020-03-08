@@ -667,6 +667,8 @@ def augment_data(args):
                     os.makedirs(save_dir_x)
                 if not os.path.exists(save_dir_gt):
                     os.makedirs(save_dir_gt)
+                    
+                print("creating the dirs: ", save_dir_x, save_dir_gt)
 
                 print("Working on the dir: ", os.path.join(X_dir, i), os.path.join(GT_dir, i))
                 for j in range(n):
@@ -988,6 +990,8 @@ def augment_data(args):
 
                     if not os.path.exists(save_dir_x):
                         os.makedirs(save_dir_x)
+                        
+                    print("creating the dir: ", save_dir_x)
 
                     print("Working on the dir: ", os.path.join(X_dir, i), i)
                     for j in range(n):
