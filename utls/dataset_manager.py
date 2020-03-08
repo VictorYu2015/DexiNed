@@ -1110,6 +1110,8 @@ def get_batch(arg,file_list, batch=None, use_batch=True):
         images=[]
         edgemaps=[]
         for idx, b in enumerate(batch):
+            
+            print("file_list[b][0], file_list[b][1],", file_list[b][0],file_list[b][1])
             x = cv.imread(file_list[b][0]) #  Image.open(file_list[b][0])
             y = cv.imread(file_list[b][1]) #  Image.open(file_list[b][1])
             print("arg.image_width, arg.image_height,", arg.image_width,arg.image_height)
